@@ -1,220 +1,117 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zayn Toorawa – Digital Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Timeline } from "lucide-react";
 
-    body {
-      background: radial-gradient(ellipse at top left, #0f0f0f, #1c1c1c);
-      color: #e5e5e5;
-      line-height: 1.6;
-    }
+export default function Portfolio() {
+  return (
+    <main className="p-6 space-y-8">
+      {/* Hero Section */}
+      <section className="text-center">
+        <img
+          src="/DSC03896.JPG"
+          alt="Zayn Toorawa portrait"
+          className="mx-auto w-32 h-32 rounded-full object-cover shadow-lg"
+        />
+        <h1 className="text-4xl font-bold mt-4">Zayn Toorawa</h1>
+        <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+          Digital Transformation Specialist | Power Platform Developer | UX Enthusiast
+        </p>
+      </section>
 
-    img {
-  max-width: 250px; /* adjust this to whatever size you want */
-  height: auto;
-  border-radius: 100px; /* optional for rounded corners */
+      {/* About Me */}
+      <section>
+        <h2 className="text-2xl font-semibold mb-2">About Me</h2>
+        <p>
+          I’m a Digital & Technology Solutions graduate from Bentley Motors with experience delivering impactful tech
+          solutions across UX/UI, HR Digital, Manufacturing, and Strategy. From building a clock-in app used by 350+ employees
+          to redesigning Bentley's intranet site, I thrive at the intersection of user experience and digital efficiency.
+        </p>
+      </section>
+
+      {/* Timeline of Roles */}
+      <section>
+        <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
+          <Timeline className="w-6 h-6" /> Journey & Key Projects
+        </h2>
+
+        <div className="space-y-4">
+          <Card>
+            <CardContent className="p-4">
+              <h3 className="font-bold text-lg">Bentley Motors – HR Digital (2025)</h3>
+              <p>
+                Developed a mobile clock-in/out app using Power Apps, integrated with SharePoint and Power Automate.
+                Conducted user testing with R&D colleagues worldwide. Achieved £33k+ in annual time savings.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-4">
+              <h3 className="font-bold text-lg">Bentley Motors – Strategy (2024)</h3>
+              <p>
+                Built an automated Tableau dashboard using Teams data to track KPIs for senior leadership. Led agile delivery
+                cycles and streamlined quarterly reporting.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-4">
+              <h3 className="font-bold text-lg">Bentley Motors – UX/UI (2024)</h3>
+              <p>
+                Created digital business cards using Apple Developer tools. Contributed to the brand refresh through Frontify
+                and supported Bentley’s EXP 15 concept car customer journey mapping.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-4">
+              <h3 className="font-bold text-lg">Bentley Motors – Systems (2021-2022)</h3>
+              <p>
+                Redesigned the Manufacturing intranet site using SharePoint. Used Figma, FullStory, and A/B testing to drive
+                UX improvements for 1000+ users.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* App Showcase */}
+      <section>
+        <h2 className="text-2xl font-semibold mb-2">Featured Projects</h2>
+        <div className="grid gap-6 md:grid-cols-2">
+          <Card>
+            <CardContent className="p-4">
+              <img src="/e9bea0dd-932a-4d4d-9d66-58a8c55e69ba.png" alt="Clock-in app development stages" className="rounded-md mb-2" />
+              <h3 className="font-bold">TimeConnect App</h3>
+              <p>
+                From Figma prototype to final build — designed and deployed Bentley’s mobile clock-in solution across R&D,
+                saving time and improving tracking.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-4">
+              <img src="/0d3ae4eb-83da-43f7-bfef-809248657f74.png" alt="WINGS Tableau dashboard" className="rounded-md mb-2" />
+              <h3 className="font-bold">WINGS Dashboard</h3>
+              <p>
+                Automated a Tableau dashboard pulling data from Teams tickets to track strategic deliverables — adopted by
+                senior manufacturing leads.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Contact Button */}
+      <section className="text-center mt-8">
+        <a href="mailto:zayn.toorawa@example.com">
+          <Button className="text-lg px-6 py-4">Get in Touch</Button>
+        </a>
+      </section>
+    </main>
+  );
 }
 
-
-    header {
-      text-align: center;
-      padding: 80px 20px 40px;
-    }
-
-    header h1 {
-      font-size: 3.5rem;
-      color: #00ffd0;
-      letter-spacing: 2px;
-    }
-
-    header p {
-      font-size: 1.1rem;
-      color: #ccc;
-      margin-top: 10px;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-
-    section {
-      margin-bottom: 60px;
-    }
-
-    h2 {
-      font-size: 2rem;
-      color: #00ffd0;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #00ffd0;
-      display: inline-block;
-    }
-
-    .project, .module, .role {
-      background: #2a2a2a;
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 25px;
-      box-shadow: 0 4px 10px rgba(0, 255, 208, 0.1);
-    }
-
-    .project h3, .module h3, .role h3 {
-      margin-bottom: 10px;
-      color: #fff;
-      font-size: 1.4rem;
-    }
-
-    .project p, .module p, .role p {
-      color: #bbb;
-    }
-
-    .placeholder {
-      margin-top: 10px;
-      font-style: italic;
-      color: #888;
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      color: #666;
-    }
-
-    a {
-      color: #00ffd0;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    img.placeholder {
-      width: 100%;
-      height: auto;
-      margin-top: 10px;
-      border: 2px dashed #555;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Zayn Toorawa</h1>
-    <p>UX/UI Designer • Product Owner • Project Manager • App Developer • SharePoint Specialist</p>
-     <img src="DSC03899.JPG" alt="Profile Photo">
-  </header>
-
-  <div class="container">
-    <section>
-      <h2>About Me</h2>
-      <p>
-        I’m a digital problem solver with 4 years of experience at Bentley Motors, delivering solutions that span UX/UI design,
-        Power Platform development, SharePoint architecture, Agile project delivery, and strategic reporting. From improving manufacturing intranets to building mobile apps and dashboards used globally, I focus on creating impactful, user-friendly digital tools that solve real business problems.
-      </p>
-    </section>
-
-    <section>
-      <h2>Key Projects</h2>
-
-      <div class="project">
-        <h3>TimeConnect – Mobile Clock-In/Out App</h3>
-        <p>Built a mobile-first Power Apps solution for R&D colleagues, reducing clock-in time from 7 minutes to 25 seconds. Used Figma for UI, Power Automate for backend logic, and SharePoint for data storage. Delivered via Agile sprints.</p>
-       <img src="FrontMain.JPG" alt="TimeConnect dvelopments">
-      </div>
-
-      <div class="project">
-        <h3>WINGS Intranet Redesign</h3>
-        <p>Redesigned Bentley’s SharePoint intranet site used by 1,000+ colleagues. Added tooltips, predictive search, improved IA, and modern UI. Led A/B testing, UX interviews, and workshops.</p>
-      </div>
-
-      <div class="project">
-        <h3>Digital KPI Dashboard – Tableau Automation</h3>
-        <p>Replaced manual PowerPoint reporting with an automated dashboard using Tableau and metadata from Teams tickets. Reduced 6+ hours/week of admin work for senior leaders.</p>
-       
-      </div>
-
-      <div class="project">
-        <h3>Frontify Brand Book & Digital Business Cards</h3>
-        <p>Co-authored Bentley’s Frontify brand system and designed interactive digital business cards for events and internal networking. Aligned all visual and UX patterns with enterprise branding.</p>
-      
-      </div>
-    </section>
-
-    <section>
-      <h2>Roles & Experience</h2>
-
-      <div class="role">
-        <h3>Product Owner</h3>
-        <p>Led backlog grooming, sprint planning, and stakeholder alignment for app and dashboard development. Prioritised features based on user research and strategic goals.</p>
-      </div>
-
-      <div class="role">
-        <h3>UX/UI Designer</h3>
-        <p>Used Figma to design intuitive mobile and desktop UIs. Ran user research, created personas in Smaply, and delivered interactive prototypes across projects.</p>
-      </div>
-
-      <div class="role">
-        <h3>Project Manager</h3>
-        <p>Scoped deliverables using Microsoft Project. Ran retrospectives, tracked delivery using Kanban boards, and engaged cross-functional teams across departments.</p>
-      </div>
-
-      <div class="role">
-        <h3>App Developer</h3>
-        <p>Developed Power Apps solutions integrated with SharePoint, Power Automate, and external CSV-based systems. Tested offline functionality and SSO authentication.</p>
-      </div>
-
-      <div class="role">
-        <h3>SharePoint & Intranet Specialist</h3>
-        <p>Managed and redesigned Bentley’s manufacturing intranet. Introduced improved navigation, click tracking, and streamlined document governance.</p>
-      </div>
-    </section>
-
-    <section>
-      <h2>University Modules</h2>
-
-      <div class="module">
-        <h3>UX/UI Design</h3>
-        <p>Explored interaction design principles, journey mapping, wireframing, prototyping, and accessibility standards.</p>
-      </div>
-      <div class="module">
-        <h3>Project Management</h3>
-        <p>Covered Agile, Waterfall, sprint cycles, stakeholder management, risk assessment, and Microsoft Project.</p>
-      </div>
-      <div class="module">
-        <h3>Consultancy Practice</h3>
-        <p>Learned stakeholder analysis, requirements gathering, business case development, and communication planning.</p>
-      </div>
-      <div class="module">
-        <h3>Data Visualisation</h3>
-        <p>Used Tableau and Power BI to translate business data into decision-support tools with interactive visuals.</p>
-      </div>
-      <div class="module">
-        <h3>Agile & DevOps</h3>
-        <p>Studied continuous delivery, backlog refinement, automated testing, and iterative team collaboration models.</p>
-      </div>
-    </section>
-
-    <section>
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:zayntoorawa123@live.com">zayntoorawa123@live.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/zayn-toorawa" target="_blank">linkedin.com/in/zayn-toorawa</a></p>
-     
-    </section>
-  </div>
-
-  <footer>
-    &copy; 2025 Zayn Toorawa — Digital Portfolio
-  </footer>
-</body>
-</html>
